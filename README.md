@@ -46,6 +46,16 @@ POST /jobs
 }
 ```
 
+## What it looks like
+
+Accept-fast flow: the POST returns **202** immediately, then polling `/jobs/{id}` shows the finished result.
+
+![Background job accept-fast flow: 202 enqueue + succeeded status](assets/job-flow.png)
+
+Interactive docs:
+
+![Background Job API Swagger UI](assets/swagger.png)
+
 ## Proof (from `_checkpoint.py`)
 
 ```
