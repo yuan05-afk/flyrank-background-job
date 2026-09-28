@@ -8,3 +8,6 @@ jobs.db-journal
 _pdf_extract.txt
 _checkpoint.py
 *.log
+
+# Local Netlify folder
+.netlify
