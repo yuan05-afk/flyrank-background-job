@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Background Job Queue · FlyRank · Yuan Mariano</title>
+  <meta name="description" content="POST returns 202 with a ticket. A worker does the slow work, retries with backoff, respects Idempotency-Key, and alerts on permanent failure." />
+  <meta property="og:title" content="Background Job Queue · FlyRank" />
+  <meta property="og:description" content="POST returns 202 with a ticket. A worker does the slow work, retries with backoff, respects Idempotency-Key, and alerts on permanent failure." />
+  <meta property="og:image" content="./shot.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+  <style>:root { --accent: #1f4f6b; }</style>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="https://yuan-ai-fluency.netlify.app/#backend">Yuan · FlyRank Backend</a>
+    <nav>
+      <a href="https://github.com/yuan05-afk/flyrank-background-job">GitHub</a>
+      <a href="https://yuan-ai-fluency.netlify.app/#backend">Journey</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <p class="kicker">Job · Accept fast · worker · retries</p>
+      <h1>Background Job Queue</h1>
+      <p class="lede">POST returns 202 with a ticket. A worker does the slow work, retries with backoff, respects Idempotency-Key, and alerts on permanent failure.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://github.com/yuan05-afk/flyrank-background-job">Open repository</a>
+        <a class="btn ghost" href="https://yuan-ai-fluency.netlify.app/#backend">Back to journey</a>
+      </div>
+    </section>
+    <section class="panel">
+      <figure class="shot">
+        <img src="./shot.png" alt="Accept → queue → worker → status" width="1200" height="700" />
+        <figcaption>Accept → queue → worker → status</figcaption>
+      </figure>
+    </section>
+    <section class="panel">
+      <h2>Surface</h2>
+      <table>
+        <thead><tr><th>Method</th><th>Path</th><th>Meaning</th></tr></thead>
+        <tbody><tr><td><code>POST</code></td><td><code>/jobs</code></td><td>202 · job_id + status_url</td></tr><tr><td><code>GET</code></td><td><code>/jobs/{id}</code></td><td>status / attempts / result</td></tr><tr><td><code>GET</code></td><td><code>/jobs</code></td><td>Queue counts</td></tr><tr><td><code>GET</code></td><td><code>/health</code></td><td>Worker liveness</td></tr></tbody>
+      </table>
+    </section>
+    
+  </main>
+  <footer>
+    <span>FlyRank Backend AI Engineering · Yuan Andrei Mariano</span>
+    <a href="https://github.com/yuan05-afk/flyrank-background-job">yuan05-afk/flyrank-background-job</a>
+  </footer>
+</body>
+</html>
